@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-09-30T09:21:45Z" product-name="ns_protect_site">
+		<header/>
+		<body>
+			<trans-unit id="tx_nsprotectsite_domain_model_settings">
+				<source>Settings</source>
+			</trans-unit>
+			<trans-unit id="tx_nsprotectsite_domain_model_settings.password">
+				<source>Password</source>
+			</trans-unit>
+			<trans-unit id="tx_nsprotectsite_domain_model_settings.whitelist">
+				<source>Whitelist</source>
+			</trans-unit>
+			<trans-unit id="tx_nsprotectsite_domain_model_settings.status">
+				<source>Status</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

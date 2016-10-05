@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-09-30T09:21:45Z" product-name="ns_protect_site">
+		<header/>
+		<body>
+			<trans-unit id="password.description">
+				<source>password</source>
+			</trans-unit>
+			<trans-unit id="whitelist.description">
+				<source>whitelist</source>
+			</trans-unit>
+			<trans-unit id="status.description">
+				<source>status</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

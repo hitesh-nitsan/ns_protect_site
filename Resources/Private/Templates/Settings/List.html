@@ -1,0 +1,56 @@
+
+<f:layout name="Backend" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="content">
+<style>
+.ns_protect_site .radio-inline.radio, .checkbox-inline.radio, .radio-inline.checkbox, .checkbox-inline.checkbox{
+  margin-top: 0px;
+}
+.ns_protect_site p{
+  margin:0;
+}
+</style>
+<div class='page-header' style='margin-top:0;'>
+  <h1>NITSAN Site Protector settings</h1>
+</div>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-8'>
+      <f:form action='save' object='{settings}' name='settings'>
+        <p><b>Status:-</b></p>
+        <div class="checkbox checkbox-inline checkbox-primary">
+            <f:form.radio value="1" property="status" class='' id='enable'/>
+              <label for="enable">
+              Enable
+            </label>
+        </div>
+        <div class="checkbox checkbox-inline checkbox-primary">
+            <f:form.radio value="0" property="status" class='' checked="{f:if(condition:'{settings.status}',else:'1')}" id='disable'/>
+              <label for="disable">
+              Disable
+            </label>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:-</label>
+          <v:variable.set name='isRequired' value="{f:if(condition:'{settings.password}', then:0, else:1)}" />
+          <f:form.password property="password" value="" additionalAttributes="{required:isRequired}" class='form-control' />
+        </div>
+        
+        <f:form.submit value='Save' class='btn btn-primary col-md-3' />
+      </f:form>
+    </div>
+  </div>
+</div>
+</f:section>

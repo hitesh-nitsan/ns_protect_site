@@ -1,0 +1,127 @@
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    60,
+                    69
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": false,
+                    "_default2_new_create": false,
+                    "_default3_edit_update": false,
+                    "_default4_delete": false,
+                    "customActions": [
+                        "login",
+                        "attempt"
+                    ]
+                },
+                "name": "Settings",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "392329837368"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "password",
+                            "propertyType": "Password",
+                            "uid": "1057419097089"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "whitelist",
+                            "propertyType": "String",
+                            "uid": "809585944766"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "status",
+                            "propertyType": "String",
+                            "uid": "263898889428"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [
+            {
+                "actions": {
+                    "controllerActionCombinations": ""
+                },
+                "description": "",
+                "key": "protector",
+                "mainModule": "tools",
+                "name": "Site Protector",
+                "tabLabel": "Site Protector"
+            }
+        ],
+        "description": "Protect your site from Public and Search Engines with a single password.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 7.6.0-7.6.99\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "ns_protect_site",
+        "name": "Nitsan Site Protector",
+        "originalExtensionKey": "nitsan_protect_site",
+        "originalVendorName": "NS",
+        "persons": [],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "",
+                    "noncacheableActions": "",
+                    "switchableActions": ""
+                },
+                "key": "login",
+                "name": "Login"
+            }
+        ],
+        "vendorName": "NS"
+    },
+    "wires": [],
+    "log": {
+        "last_modified": "2016-09-30 09:21",
+        "extension_builder_version": "7.6.0",
+        "be_user": " (1)"
+    }
+}

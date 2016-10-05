@@ -1,0 +1,105 @@
+
+plugin.tx_nsprotectsite_login {
+	view {
+		templateRootPaths.0 = {$plugin.tx_nsprotectsite_login.view.templateRootPath}
+		partialRootPaths.0 = {$plugin.tx_nsprotectsite_login.view.partialRootPath}
+		layoutRootPaths.0 = {$plugin.tx_nsprotectsite_login.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_nsprotectsite_login.persistence.storagePid}
+	}
+}
+
+plugin.tx_nsprotectsite._CSS_DEFAULT_STYLE (
+	textarea.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	input.f3-form-error {
+		background-color:#FF9F9F;
+		border: 1px #FF0000 solid;
+	}
+
+	.tx-nitsan-protect-site table {
+		border-collapse:separate;
+		border-spacing:10px;
+	}
+
+	.tx-nitsan-protect-site table th {
+		font-weight:bold;
+	}
+
+	.tx-nitsan-protect-site table td {
+		vertical-align:top;
+	}
+
+	.typo3-messages .message-error {
+		color:red;
+	}
+
+	.typo3-messages .message-ok {
+		color:green;
+	}
+
+)
+
+ # Module configuration
+module.tx_nsprotectsite_tools_NsProtectSiteprotector {
+	persistence {
+		storagePid = {$module.tx_nsprotectsite_protector.persistence.storagePid}
+	}
+	view {
+		templateRootPaths.0 = {$module.tx_nsprotectsite_protector.view.templateRootPath}
+		partialRootPaths.0 = {$module.tx_nsprotectsite_protector.view.partialRootPath}
+		layoutRootPaths.0 = {$module.tx_nsprotectsite_protector.view.layoutRootPath}
+	}
+}
+
+[NS\NsProtectSite\TypoScript\IsProtectedCondition]
+page >
+page = PAGE
+page.typeNum = 0
+config.admPanel = 0
+config.noPageTitle = 2
+config.removeDefaultCss = 1
+config.removeDefaultJs = 1
+# INCLUDE CSS
+page.includeCSS >
+page.includeCSS{
+	10 = EXT:ns_protect_site/Resources/Public/bootstrap/css/bootstrap.min.css
+}
+# Meta for Viewport
+page.meta.viewport = width=device-width, initial-scale=1
+page.includeJS >
+# INCLUDE JS Header
+page.includeJS{
+}
+page.includeJSFooter >
+# INCLUDE JS Footer
+page.includeJSFooter{
+	10 = EXT:ns_protect_site/Resources/Public/bootstrap/css/jquery-2.1.4.min.js
+	15 = EXT:ns_protect_site/Resources/Public/bootstrap/css/bootstrap.min.js
+
+}
+page.headerData{
+	10 = TEXT
+	10.value = <title>NITSAN Protected Site</title>
+
+}
+page.10 = USER_INT
+page.10 {
+    vendorName = NS
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = NsProtectSite
+    pluginName = Login
+    controller = Settings
+    switchableControllerActions {
+      Settings {
+        1 = login
+				2 = attempt
+      }
+    }
+}
+
+[global]
